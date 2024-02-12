@@ -1,33 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculator</title>
-    <script>
-        function Addnumber()
-        {
-            var f,s,r;
-            f = parseInt(document.getElementById("t1").value);
-            s = parseInt(document.getElementById("t2").value);
-            r = f+s;
-            document.getElementById("t3").innerHTML=r;
-            
-        }
-    </script>
-    <style>
-
-    </style>
+    <title>Calculator</title>
 </head>
+
 <body>
-    <div class="container">
-        <h1>This is a website for creating calculator</h1>
-
-        <input type="text" id="t1" placeholder="Firstname">
-        <input type="text" id="t2" placeholder="Seconfname">
-        <input type="text" id="t3" placeholder="Result" readonly="true">
-
-    </div>
-    
+    <h1>This is a calculator</h1>
+    <form action="/" method="post">
+        <input type="text" name="num1" placeholder="Enter 1st number">
+        <input type="text" name="num2" placeholder="Enter 2nd number">
+        <button type="submit" name="submit1">Result</button>
+    </form>
 </body>
+
 </html>
