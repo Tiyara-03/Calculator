@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="style2.css">
+	<script type="text/javascript">
+	    var symbol=false;
+            var first_input=false;
+        	function insert(num){
+        		if (num=='1'||num=='2'||num=='3'||num=='4'||num=='5'||num=='6'||num=='7'||num=='8'||num=='9'||num=='0') {
+        			document.form.textview.value = document.form.textview.value+num;
+        			first_input=true;
+					symbol=false;
+					console.log("1st");
+        		}
+        		else if (symbol==true || first_input==false){
+        			console.log("2nd");
+					false;
+			    }
+				else if (num=='+'||num=='-'||num=='*'||num=='/') {
+					console.log("3rd");
+					document.form.textview.value = document.form.textview.value+num;
+					symbol=true;
+				}
+				else{
+					alert("False input");
+					console.log("False input");
+				}
+				console.log(num);
+				console.log(symbol);
+				console.log(first_input);
+            }
+            function equal(){
+                var exp = document.form.textview.value
+                if(exp){
+                    document.form.textview.value = eval(exp)
+                }
+            }
+            function clean(){
+                document.form.textview.value = "";
+                first_input=false;
+		console.log("clean")
+            }
+
+	</script>
+</head>
+<body>
+	<form name="form">
+		<input class="textview" name="textview">
+	</form>
+	<table>
+		<tr>
+			<td><input type="button" name="one" class="but" onclick="insert(1)" value="1"></td>
+			<td><input type="button" name="two" class="but" onclick="insert(2)" value="2"></td>
+			<td><input type="button" name="three" class="but" onclick="insert(3)" value="3"></td>
+			<td><input type="button" name="plus" class="but" onclick="insert('+')" value="+"></td>
+		</tr>
+		<tr>
+			<td><input type="button" name="four" class="but" onclick="insert(4)" value="4"></td>
+			<td><input type="button" name="five" class="but" onclick="insert(5)" value="5"></td>
+			<td><input type="button" name="six" class="but" onclick="insert(6)" value="6"></td>
+			<td><input type="button" name="minus" class="but" onclick="insert('-')" value="-"></td>
+		</tr>
+		<tr>
+			<td><input type="button" name="seven" class="but" onclick="insert(7)" value="7"></td>
+			<td><input type="button" name="eight" class="but" onclick="insert(8)" value="8"></td>
+			<td><input type="button" name="nine" class="but" onclick="insert(9)" value="9"></td>
+			<td><input type="button" name="mult" class="but" onclick="insert('*')" value="*"></td>
+		</tr>
+		<tr>
+			<td><input type="button" name="clear" class="but" onclick="clean()" value="C"></td>
+			<td><input type="button" name="equal" class="but" onclick="equal()" value="="></td>
+			<td><input type="button" name="zero" class="but" onclick="insert(0)" value="0"></td>
+			<td><input type="button" name="divide" class="but" onclick="insert('/')" value="/"></td>
+		</tr>
+	</table>
+</body>
+</html>

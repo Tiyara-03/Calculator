@@ -20,19 +20,35 @@
             r = f-s;
             document.getElementById("t3").value = r;
         }
+        function Mulnum(){
+            var f,s,r;
+            f = parseInt(document.getElementById("t1").value);
+            s = parseInt(document.getElementById("t2").value);
+            r = f*s;
+            document.getElementById("t3").value = r;
+        }
+
+        function Divnum(){
+            var f,s,r;
+            f = parseInt(document.getElementById("t1").value);
+            s= parseInt(document.getElementById("t2").value);
+            r = f/s;
+            document.getElementById("t3").value = r;
+        }
     </script>
 </head>
 <body>
+    <h1 id="Result"></h1>
     <form action="">
         <input type="text" id="t1" placeholder="Enter 1st no.">
         <input type="text" id="t2" placeholder="enter 2nd no.">
         <input type="button" value="+" onclick="Addnum()">
         <input type="button" value="-" onclick="Subnum()">
-        <input type="text" id="t3" placeholder="Result">
-        <!-- <h1 id="t3"></h1> -->
+        <input type="button" value="x" onclick="Mulnum()">
+        <input type="button" value="/" onclick="Divnum()">
+        <input type="text" id="t3" placeholder="=">
     </form>
 </body>
 </html> 
-
 
 
