@@ -1,16 +1,14 @@
-const express = require("express");
-const bodyparser = require("body-parser");
-const App = express();
-const path = require("path");
-
-App.use(bodyparser.urlencoded({extended:true}));
-
-// App.use(express.static('public'));
-App.use(express.static(path.join(__dirname, 'public')));
-// App.use(express.urlencoded());
+const bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
 
 
-App.get("/", (req,res)=> res.sendFile(__dirname + "/index.html"));
+//Express specific stuff
+app.use('/static', express.static('static')) //For serving static files
+app.use(bodyParser.urlencoded({extended:true}));
 
+app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'));
 
-App.listen(3000, ()=> console.log("The server started sucessfully on port 3000"));
+app.post("/", (req,res) => res.send("Thank you for posting this"));
+
+app.listen(3000,()=> console.log("the server started sucessfully"));
