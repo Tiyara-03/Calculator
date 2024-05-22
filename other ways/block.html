@@ -4,13 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, iniital-scale=1.0">
     <title>Title</title>
+    <style>
+        body{
+            background-color: rgb(161, 224, 224);
+            margin: 30px;
+            padding: 40px;
+            
+        }
+    </style>
     <script>
         function Addnum(){
             var f,s,r;
             f = parseInt(document.getElementById("t1").value);
             s = parseInt(document.getElementById("t2").value);
             r = f+s;
+
             document.getElementById("t3").value = r;
+            
+
         }
 
         function Subnum(){
@@ -18,6 +29,22 @@
             f= parseInt(document.getElementById("t1").value);
             s= parseInt(document.getElementById("t2").value);
             r = f-s;
+            document.getElementById("t3").value = r;
+        }
+
+        function Mulnum(){
+            var f,s,r;
+            f = parseInt(document.getElementById("t1").value);
+            s = parseInt(document.getElementById("t2").value);
+            r = f*s;
+            document.getElementById("t3").value = r;
+        }
+
+        function Divnum(){
+            var f,s,r;
+            f = parseInt(document.getElementById("t1").value);
+            s = parseInt(document.getElementById("t2").value);
+            r = f/s;
             document.getElementById("t3").value = r;
         }
     </script>
@@ -28,6 +55,8 @@
         <input type="text" id="t2" placeholder="enter 2nd no.">
         <input type="button" value="+" onclick="Addnum()">
         <input type="button" value="-" onclick="Subnum()">
+        <input type="button" value="*" onclick="Mulnum()">
+        <input type="button" value="%" onclick="Divnum()">
         <input type="text" id="t3" placeholder="Result">
         <!-- <h1 id="t3"></h1> -->
     </form>
